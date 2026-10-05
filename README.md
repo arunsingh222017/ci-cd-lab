@@ -6,8 +6,4 @@ maintained by the trainign team
 teammate was here
 Branch Demo
 see the docs folder for details
-<<<<<<< HEAD
-status:review
-=======
 status:final
->>>>>>> feature/status-final
