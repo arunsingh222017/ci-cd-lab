@@ -1,4 +1,4 @@
 # Each line is a pattern followed by the people who must review changes to it.
 # The last matching pattern wins.
-*            @<colleague-username>
-/.github/    @<your-username> @<colleague-username>
+*            @singharun1985-love
+/.github/    @arunsingh222017 @singharun1985-love
