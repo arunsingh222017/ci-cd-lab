@@ -8,3 +8,4 @@ teammate was here
 Branch Demo
 see the docs folder for details
 status:final
+see conttributing.md for how we work
