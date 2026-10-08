@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]      # check every PR aimed at main, before it can merge
+  push:
+    branches: [main]      # re-check main after every merge
+
+permissions:
+  contents: read          # the job only needs to read the code
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10   # stop a stuck job instead of burning minutes
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'   # quoted, so 3.10 is never read as 3.1
+
+      - name: Show the Python version
+        run: python --version
+
+      - name: Check that the code compiles
+        run: python -m py_compile app.py
+
+      - name: Run the app
+        run: python app.py
