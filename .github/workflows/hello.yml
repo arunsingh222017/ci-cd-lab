@@ -1,0 +1,22 @@
+name: Hello workflow
+
+on:
+  workflow_dispatch:      # adds a Run workflow button in the Actions tab
+  push:
+    branches: [main]      # runs after every merge to main
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Say hello
+        run: echo 'Hello from GitHub Actions'
+
+      - name: Show what triggered this run
+        run: echo 'Triggered by ${{ github.actor }} through a ${{ github.event_name }} event'
+
+      - name: Look at the machine
+        run: |
+          uname -a
+          date
